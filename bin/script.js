@@ -30,3 +30,7 @@ function carousel() {
   x[myIndex-1].style.display = "block";  
   setTimeout(carousel, 5000);    
 }
+
+function sbt(){
+  document.getElementById("myForm").submit();
+}
