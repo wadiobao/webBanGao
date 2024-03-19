@@ -6,12 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="shortcut icon" type="image/png" href="../src/img/logo1.png"/>
+
   <link rel="stylesheet" href="./style.css" />
-  <title>Document</title>
+  <title>Tất cả sản phẩm</title>
   <style>
     a {
       text-decoration: none;
     }
+
+    .w3-row-padding {
+      display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.5%; /* Đặt margin âm để điều chỉnh các ảnh hiển thị đúng cách */
+  }
+  .w3-quarter {
+    width: 23%; /* 25% với 2% margin mỗi bên tạo ra tổng cộng là 25% */
+    float: left;
+    padding: 0 1.5%; /* Padding bên trong cho mỗi ảnh */
+    margin: 1%; /* Margin dưới để tạo ra khoảng cách giữa các hàng */
+  }
+  @media screen and (max-width: 800px) {
+    .w3-quarter {
+      width: 48%; /* Chia đôi để hiển thị 2 ảnh trên hàng */
+    }
+  }
+
   </style>
 </head>
 <div class="w3-top" id="nav">
@@ -40,10 +61,11 @@
 
 
 <!-- Sản phẩm bán chạy -->
-<div class="w3-container" style="margin-top: 150px; margin: 0 36px;">
-  <h1 id="top-seller">Sản phẩm bán chạy </h1><br />
-  <div style="display: flex;" class="w3-row"> 
-      <div class="w3-card-2 w3-quarter" style="width: 25%; margin: 10px;">
+<div class="w3-container" style=" margin: 0 36px;margin-top: 100px;">
+  <h1 id="top-seller">Sản phẩm bán chạy</h1><br />
+  <div style="" class="w3-row-padding"> 
+
+      <div class="w3-card-2 w3-quarter" style="">
         <a href="">
           <img src="../src/img/cam.jpg" alt="" style="width: 100%;" class="w3-mobile">
           <div style="margin-left: 10px;">
@@ -54,18 +76,21 @@
           </div>
         </a>
       </div>
-      <div class="w3-card-2 w3-quarter" style="width: 25%;margin: 10px;">
+
+      <div class="w3-card-2 w3-quarter" style="">
         <a href="">
           <img src="../src/img/st25-lua-tom.jpg" alt="" style="width: 100%;">
           <div style="margin-left: 10px;">
             <p>Gạo St25 lúa tôm<br> (DNTN Hồ Quang Trí)</p>
             <p>hộp 2kg</p>
             <p>120.000đ</p>
-    
           </div>
         </a>
       </div>
-      <div class="w3-card-2 w3-quarter" style="width: 25%;margin: 10px;">
+    
+
+
+      <div class="w3-card-2 w3-quarter" style="">
         <a href="">
           <img src="../src/img/st24.jpg" alt="" style="width: 100%;">
           <div style="margin-left: 10px;">
@@ -76,7 +101,8 @@
           </div>
         </a>
       </div>
-      <div class="w3-card-2 w3-quarter" style="width: 25%;margin: 10px;">
+
+      <div class="w3-card-2 w3-quarter" style="">
         <a href="">
           <img src="../src/img/thailan.jpg" alt="" style="width: 100%;">
           <div style="margin-left: 10px;">
@@ -97,31 +123,31 @@
     <div class="w3-half w3-display-container">
       <div class="" style="margin:3%;">
         <div class="w3-dropdown-click w3-round-xxlarge">
-          <button onclick="dropDown('List1')" class="w3-button w3-black w3-round-xxlarge" style="">Xuất xứ</button>
+          <button onclick="dropDown('List1')" class="w3-button w3-border w3-border-black w3-round-xxlarge" style="">Xuất xứ <i class="fa fa-angle-down"></i></button>
           <div id="List1" class="w3-dropdown-content w3-bar-block w3-border w3-round-xlarge w3-ul">
-            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoViet">Việt Nam</label></li>
-            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoThai">Thái Lan</label></li>
-            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoMy">Mỹ</label></li>
-            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoMy">Ấn Độ</label></li>
+            <li><input type="checkbox" class="w3-check " name="" id="gaoViet" onchange="filter('VietNam')"><label for="gaoViet"> Việt Nam</label></li>
+            <li><input type="checkbox" class="w3-check " name="" id="gaoThai" onchange="filter('ThaiLan')"><label for="gaoThai"> Thái Lan</label></li>
+            <li><input type="checkbox" class="w3-check " name="" id="gaoMy" onchange="filter('My')"><label for="gaoMy"> Mỹ</label></li>
+            <li><input type="checkbox" class="w3-check " name="" id="gaoAnDo" onchange="filter('AnDo')"><label for="gaoAnDo"> Ấn Độ</label></li>
 
           </div>
         </div>
 
         <div class="w3-dropdown-click w3-round-xxlarge" style="margin: 0 42px;">
-          <button onclick="dropDown('List2')" class="w3-button w3-black w3-round-xxlarge" style="">Loại gạo</button>
+          <button onclick="dropDown('List2')" class="w3-button w3-border w3-border-black w3-round-xxlarge" style="">Loại gạo <i class="fa fa-angle-down"></i></button>
           <div id="List2" class="w3-dropdown-content w3-bar-block w3-border w3-round-xlarge w3-ul">
-            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoViet">Gạo Việt</label></li>
-            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoThai">Gạo Thái</label></li>
-            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoMy">Gạo Mỹ</label></li>
+            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoViet"> Gạo nếp</label></li>
+            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoThai"> Gạo tẻ</label></li>
+            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoMy"> Gạo lứt</label></li>
           </div>
         </div>
         
         <div class="w3-dropdown-click w3-round-xxlarge">
-          <button onclick="dropDown('List3')" class="w3-button w3-black w3-round-xxlarge" style="">Khối lượng</button>
+          <button onclick="dropDown('List3')" class="w3-button w3-border w3-border-black w3-round-xxlarge" style="">Khối lượng <i class="fa fa-angle-down"></i></button>
           <div id="List3" class="w3-dropdown-content w3-bar-block w3-border w3-round-xlarge w3-ul">
-            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoViet">Gạo Việt</label></li>
-            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoThai">Gạo Thái</label></li>
-            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoMy">Gạo Mỹ</label></li>
+            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoViet"> 10kg</label></li>
+            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoThai"> 5kg</label></li>
+            <li><input type="checkbox" class="w3-check " name="" id="gaoThai"><label for="gaoMy"> 1kg</label></li>
           </div>
         </div>
 
@@ -129,21 +155,23 @@
     </div>
   </div>
 
-  <div style="display: flex;margin-bottom: 36px;">
-    <div class="w3-card-2 " style="width: 25%; margin: 10px;background-color: white;">
+  <div class="w3-row-padding" id="sp" >
+    <!-- anh 1 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="VietNam">
       <a href="">
-        <img src="./iGao/nep-cai-hoa-vang-loai-1.jpg" alt="" style="width: 100%;" class="">
-        <div style="margin-left: 10px;">
+        <img src="./iGao/nep-cai-hoa-vang-loai-1.jpg" loading="lazy" alt="" style="width: 100%;" class="">
+        <div style="margin-left: 10px;" id="VietNam">
           <p>Gạo nếp cái hoa vàng<br> (loại 1)</p>
           <p>túi 1kg</p>
           <p>35.000đ</p>
-      
         </div>
       </a>
     </div>
-    <div class="w3-card-2" style="width: 25%;margin: 10px;background-color: white;">
+
+    <!-- anh 2 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="VietNam"> 
       <a href="">
-      <img src="./iGao/nep-nuong-copy.jpg" alt="" style="width: 100%;">
+      <img src="./iGao/nep-nuong-copy.jpg" loading="lazy" alt=""  style="width: 100%;">
       <div style="margin-left: 10px;">
           <p>Gạo nếp nương Điện Biên<br> &nbsp; </p>
           <p>túi 1kg</p>
@@ -152,10 +180,10 @@
       </div>
       </a>
     </div>
-
-    <div class="w3-card-2" style="width: 25%;margin: 10px;background-color: white;">
+      <!-- anh 3 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="VietNam">
       <a href="">
-      <img src="./iGao/nep-cam-copy.jpg" alt="" style="width: 100%;">
+      <img src="./iGao/nep-cam-copy.jpg" loading="lazy" alt="" style="width: 100%;">
       <div style="margin-left: 10px;">
           <p>Gạo nếp cẩm<br> &nbsp;</p>
           <p>túi 1kg</p>
@@ -163,10 +191,10 @@
       </div>
       </a>
     </div>
-
-    <div class="w3-card-2" style="width: 25%;margin: 10px;background-color: white;">
+<!-- anh 4 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="ThaiLan">
       <a href="">
-      <img src="./iGao/nep-thai.jpg" alt="" style="width: 100%;">
+      <img src="./iGao/nep-thai.jpg" loading="lazy" alt="" style="width: 100%;">
       <div style="margin-left: 10px;">
         <p>Gạo nếp Thái Lan <br> Hom Mali Hoa Ly </p>
         <p>túi 5kg</p>
@@ -174,16 +202,102 @@
       </div>
       </a>
     </div>
+  
 
-    <div class="w3-card-2 " style="width: 25%; margin: 10px;background-color: white;">
+  <!-- anh 5 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="ThaiLan">
       <a href="">
-        <img src="./iGao/nep-cai-hoa-vang-loai-1.jpg" alt="" style="width: 100%;" class="">
+        <img src="./GaoThai/lai-sua-copy.jpg" loading="lazy" alt="" style="width: 100%;" class="">
         <div style="margin-left: 10px;">
-          <p>Gạo nếp cái hoa vàng<br> (loại 1)</p>
-          <p>túi 1kg</p>
-          <p>35.000đ</p>
+          <p>Gạo tám Thái Lan sữa<br>&nbsp; </p>
+          <p>túi 10kg</p>
+          <p>230.000đ</p>
       
         </div>
+      </a>
+    </div>
+    
+    <!-- anh 6 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="ThaiLan">
+      <a href="">
+      <img src="./GaoThai/tam-thai-con-kien.jpg" loading="lazy" alt="" style="width: 100%;">
+      <div style="margin-left: 10px;">
+          <p>Gạo tám thái con kiến xanh<br> &nbsp; </p>
+          <p>túi 10kg</p>
+          <p>220.000đ</p>
+    
+      </div>
+      </a>
+    </div>
+
+    <!-- anh 7 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="ThaiLan">
+      <a href="">
+      <img src="./GaoThai/tam-thai-em-be.jpg" loading="lazy" alt="" style="width: 100%;">
+      <div style="margin-left: 10px;">
+          <p>Gạo tám thái em bé<br> &nbsp;</p>
+          <p>túi 10kg</p>
+          <p>220.000đ</p> 
+      </div>
+      </a>
+    </div>
+
+    <!-- anh 8 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="ThaiLan">
+      <a href="">
+      <img src="./GaoThai/tam-thai-do-tui-5kg.jpg" loading="lazy" alt="" style="width: 100%;">
+      <div style="margin-left: 10px;">
+        <p>Gạo tám thái đỏ<br> &nbsp; </p>
+        <p>túi 5kg</p>
+        <p>210.000đ</p> 
+      </div>
+      </a>
+    </div>
+  
+
+  <!-- anh 9 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="AnDo">
+      <a href="">
+        <img src="./GaoAnDo/basmati.jpg" loading="lazy" alt="" style="width: 100%;">
+        <div style="margin-left: 10px;">
+          <p>Gạo Basmati<br> India</p>
+          <p>túi 5kg</p>
+          <p>290.000đ</p>
+      
+        </div>
+      </a>
+    </div>
+    <!-- anh 10 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="AnDo">
+      <a href="">
+      <img src="./GaoAnDo/basmati1kg.jpg" loading="lazy" alt="" style="width: 100%;">
+      <div style="margin-left: 10px;">
+          <p>Gạo Basmati<br> India</p>
+          <p>túi 1kg</p>
+          <p>70.000đ</p>
+      </div>
+      </a>
+    </div>
+<!-- anh 11 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="My">
+      <a href="">
+      <img src="./GaoMy/wildrice.jpg" loading="lazy" alt="" style="width: 100%;">
+      <div style="margin-left: 10px;">
+          <p>Wild Rice - Gạo hoang cổ đại<br> Bắc Mỹ</p>
+          <p>túi 227g</p>
+          <p>158.000đ</p> 
+      </div>
+      </a>
+    </div>
+<!-- anh 12 -->
+    <div class="w3-card-2 w3-quarter" style="background-color: white;" id="My">
+      <a href="">
+      <img src="./GaoMy/s-l1600.jpg" loading="lazy" alt="" style="width: 100%;">
+      <div style="margin-left: 10px;">
+        <p>Gạo Long Grain Enriched <br> USA</p>
+        <p>túi 11.34kg</p>
+        <p>550.000đ</p> 
+      </div>
       </a>
     </div>
   </div>
