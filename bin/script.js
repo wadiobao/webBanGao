@@ -50,25 +50,25 @@ function dropDown(list) {
   }a
 }
 
-function filter(elementId) {
-  // Lắng nghe sự kiện click trên tất cả các ô đánh dấu
-  $(document).on("click", 'input[type="checkbox"]', function () {
-    // Lấy ra tất cả các ô đánh dấu trừ ô đang được click và gỡ chọn chúng
-    $('input[type="checkbox"]').not(this).prop("checked", false);
-    
-    // Kiểm tra xem ô đang được click có được chọn hay không
-    if ($(this).prop("checked")) {
-      // Ẩn tất cả các phần tử div trong #sp trừ phần tử có id là "elementId" và tất cả các div con của nó
-      $("#sp  div").not("#" + elementId + ", #" + elementId + "  *").hide();
-      // Hiển thị div có id là "elementId" và tất cả các div con bên trong nó
-      $("#" + elementId).show().find('div').show();
-    } else {
-      // Nếu không có ô đánh dấu nào được chọn, hiển thị tất cả các phần tử div trong #sp
-      $("#sp  div").show();
-    }
+
+function change(inputID) {
+  let results = Array.from(document.querySelectorAll('#sp > div'));
+  $('input[type="checkbox"]').not("#"+inputID).prop("checked", false);
+  // Hide all results
+  results.forEach(function(result) {
+    result.style.display = 'none';
+  });
+  // Filter results to only those that meet ALL requirements:
+  Array.from(document.querySelectorAll('.filter input[rel]:checked'), function(input) {
+    const attrib = input.getAttribute('rel');
+    results = results.filter(function(result) {
+      return result.classList.contains(attrib);
+    });
+  });
+  // Show those filtered results:
+  results.forEach(function(result) {
+    result.style.display = 'block';
   });
 }
-
-
-
-
+// Initially run the change function to apply any initial filters
+change();
