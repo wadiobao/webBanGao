@@ -7,7 +7,7 @@
   </title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
   <link rel="shortcut icon" type="image/png" href="../src/img/logo1.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -23,49 +23,36 @@
       text-align: center;
       font-style: italic;
     }
-
-    .diamond-frame {
-      width: 100px;
-      /* Độ rộng của khung */
-      height: 100px;
-      /* Chiều cao của khung */
-      overflow: hidden;
-      /* Ẩn phần ảnh vượt ra khỏi khung */
-      transform: rotate(45deg);
-      /* Xoay khung 45 độ */
-      position: relative;
-      border: 2px solid rgb(13, 91, 209);
-      margin: auto;
+    a{
+      text-decoration: none;
     }
 
-    .diamond-frame img {
-      width: 100%;
-      /* Đảm bảo ảnh lấp đầy khung */
-      height: auto;
-      transform: rotate(-45deg);
-      /* Đảo ngược lại ảnh để hiển thị chính xác */
-      position: absolute;
 
-    }
   </style>
 </head>
 
 <body>
   <!-- Navbar -->
-<div class="w3-top" id="nav">
-  <div class="w3-bar w3-light-grey" style="height: 60px;">
+<div class="w3-top" id="navheader">
+  <div class="w3-bar " style="height: 60px;">
     <div class="w3-bar-item " style="margin: 0; width: 200px;">
       <a href="../index.html"><img src="../src/img/logo1.png" alt="logo" style="width: 100%;margin-left: 24px;" /></a>
     </div>
     <div class="w3-right">
-      <input type="text" class="w3-bar-item w3-input w3-round-xxlarge " placeholder="Search.." style="margin:10px 0">
-      <button class="fa fa-search w3-button" style="margin:10px 0"></button>
+      <input type="text" class="w3-bar-item w3-input w3-round-xxlarge " placeholder="Search.."
+        style="margin:10px 0; display: none;" id="searchbar">
+      <button id="close-btn" class="fa fa-close"
+        style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;display: none;"
+        onclick="searchClose('close-btn')"></button>
+      <button id="search-btn" class="fa fa-search"
+        style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
+        onclick="searchDisplay('search-btn')"></button>
     </div>
-    <a href="./contract.html" class="w3-bar-item w3-button w3-right" style="margin:10px 0">LIÊN HỆ</a>
+    <a href="./contract.html" class="w3-bar-item  w3-right" style="margin:10px 20px">LIÊN HỆ </a>
     <div class="w3-bar-item"></div>
-    <a href="" class="w3-bar-item w3-button w3-right" style="margin:10px 0">GIỚI THIỆU</a>
-    <a href="./buy.html" class="w3-bar-item w3-button " style="margin:10px 0;font-weight: bold;">SHOP NOW!</a>
-    <a href="../index.html" class="w3-bar-item w3-button w3-right" style="margin:10px 0">TRANG CHỦ</a>
+    <a href="" class="w3-bar-item  w3-right" style="margin:10px 20px">GIỚI THIỆU</a>
+    <a href="./buy.html" class="w3-bar-item  " style="margin:10px 20px;font-weight: bold;">SHOP NOW!</a>
+    <a href="../index.html" class="w3-bar-item  w3-right" style="margin:10px 20px;">TRANG CHỦ</a>
   </div>
 </div>
 
@@ -76,7 +63,7 @@
         <h1 style=" font-size: 56px;font-weight: bold;">Sơ Lược Về Công Ty</h1>
         <h3 style=""> Tháng 3/2024 thành lập Công ty cổ phần VietNam's Rice: là Công ty mẹ và là đầu
           não quản lý, cấp vốn, điều hành tất cả các Công ty con và dự án. Ông Dương Quang Bảo là Chủ tịch HĐQT.</h3>
-        <h5>Cho đến nay, với hơn 25 ngày phát triển:</h5>
+        <h3>Cho đến nay, với hơn 25 ngày phát triển:</h3>
         <ul>
           <li>Trên 5 dự án đã triển khai </li>
           <li>Đội ngũ nhân sự trên 4 người</li>
@@ -134,20 +121,20 @@
       <div class=" col-xl-4 col-md-4 co-sm-6 mb-5">
         <img src="../src/img/anhdaidien.jpg" style="border-radius: 50%;width: 100%;"
           alt="a">
-        <h5 class="text-center" style="font-weight: bold;">Ông Tạ Mạnh Doanh</h5>
+        <h2 class="text-center" style="font-weight: bold;">Ông Tạ Mạnh Doanh</h2>
         <p class="text-center" style="font-style: italic;">Phó Chủ Tịch HĐQT</p>
 
       </div>
       <div class="  col-xl-4 col-md-4 co-sm-6 mb-5 ">
         <img src="../src/img/anhdaidien.jpg" style="border-radius: 50%;width: 100%;"
           alt="a">
-        <h5 class="text-center " style="font-weight: bold;">Ông Dương Quang Bảo</h5>
+        <h2 class="text-center " style="font-weight: bold;">Ông Dương Quang Bảo</h2>
         <p class="text-center" style="font-style: italic;">Chủ tịch HĐQT</p>
       </div>
       <div class="  col-xl-4 col-md-4 co-sm-6 mb-5">
         <img src="../src/img/anhdaidien.jpg" style="border-radius: 50%;width: 100%;"
           alt="a">
-        <h5 class="text-center " style="font-weight: bold;">Ông Lương Văn Giang</h5>
+        <h2 class="text-center " style="font-weight: bold;">Ông Lương Văn Giang</h2>
         <p class="text-center" style="font-style: italic;">Tổng Giám Đốc IMG</p>
       </div>
     </div>
@@ -155,9 +142,9 @@
 
   <div class="w3-container " style="background-image: url(https://img.vn/imgs/layout/bg_tn.jpg); height:300px">
     <h2 class="w3-center" style="color:#ffffff; font-size: 56px;font-weight: bold;">Tầm Nhìn Và Sứ Mệnh</h2><br><br>
-    <p class="w3-center" style="font-size: 20px; color: #ffffff ">Đầu tư chuyên nghiệp,nắm bắt cơ hội, kiên trì đến
+    <p class="w3-center" style=" color: #ffffff ">Đầu tư chuyên nghiệp, nắm bắt cơ hội, kiên trì đến
       đích,</p> <br>
-    <p class="w3-center" style="font-size: 20px; color: #ffffff">sử dụng và cập nhật công nghệ cao, đối tác chất lượng,
+    <p class="w3-center" style=" color: #ffffff">sử dụng và cập nhật công nghệ cao, đối tác chất lượng,
       nhân sự giỏi, có trách nhiệm với xã hội và nhân viên.</p>
   </div>
 
@@ -176,50 +163,67 @@
 
 
         </div>
-        <h5 class="text-center m-5" style="color: black;font-size:25px">Tốc Độ</h5>
-        <p class="text-center mb-5 " style="font-size:20px">Thực hiện deadline, <br> bảo đảm tiến độ</p>
+        <h1 class="text-center m-5" style="color: black;">Tốc Độ</h1>
+        <p class="text-center mb-5 " >Thực hiện deadline, <br> bảo đảm tiến độ</p>
       </div>
       <div class="col-md-4 mx-auto ">
         <div class="diamond-frame">
           <img src="https://img.vn/uploads/danhmuc/hieu-qua-1564025194-zganp.png" class="img-fluid" alt="Your Image">
         </div>
-        <h5 class="text-center m-5" style="color:black;font-size:25px">Trách Nhiệm</h5>
-        <p class="text-center mb-5" style="font-size:20px">Đặt chất lượng và hiệu quả công <br>việc lên trên</p>
+        <h1 class="text-center m-5" style="color:black;">Trách Nhiệm</h1>
+        <p class="text-center mb-5" >Đặt chất lượng và hiệu quả công <br>việc lên trên</p>
       </div>
       <div class="col-md-4 mx-auto ">
         <div class="diamond-frame">
           <img src="https://img.vn/uploads/danhmuc/trach-nhiem-1564025139-lbgfg.png" class="img-fluid" alt="Your Image">
         </div>
-        <h5 class="text-center m-5  " style="color:black ;font-size:25px">Hiệu Quả</h5>
-        <p class="text-center mb-5" style="font-size:20px"> Với công việc, công trình, đối tác,<br> nhân viên, xã hội
+        <h1 class="text-center m-5  " style="color:black ;">Hiệu Quả</h1>
+        <p class="text-center mb-5"> Với công việc, công trình, đối tác,<br> nhân viên, xã hội
         </p>
       </div>
     </div>
   </div>
 
-  <div class="w3-container w3-light-grey" style="height: 400px;margin-top: 64px;" id="footer">
+  <!-- footer -->
+<div class="w3-container w3-row-padding" style="margin-top: 64px;" id="footer">
+  <div class="w3-quarter w3-center">
     <div style="margin: 24px 36px; color: gray; display:inline-block;">
-      <img src="../src/img/logo1.png" alt="logo" style="">
-      <p>Số điện thoại:099999999</p>
+      <a href=""><img src="../src/img/logo1.png" alt="logo" style=""></a>
+      <p>Số điện thoại:0999.999.9999</p>
       <p>Email: contractVNR@gmail.com</p>
       <p>Địa chỉ: Trâu Quỳ, Gia Lâm, Hà Nội, Việt nam</p>
     </div>
-    <div style="display: inline-block; margin-left: 20px;color: gray;">
-      <p style="font-size: 20px;color: black;">SẢN PHẨM</p>
+  </div>
+
+  <div class="w3-quarter w3-center">
+    <div style="display: inline-block;color: gray;margin-top: 36px; margin-left:36px;">
+      <p id="foot-tilte" >SẢN PHẨM</p>
       <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Việt</a></p>
       <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Thái</a></p>
       <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Mỹ</a></p>
       <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Ấn Độ</a></p>
     </div>
-    <div style="display: inline-block; margin-left: 120px;color: gray;">
-      <p style="font-size: 20px;color: black; margin-bottom: 31px;">CÔNG TY TNHH VIETNAM'S RICE</p>
+  </div>
+  <div class="w3-quarter w3-center">
+    <div style="display: inline-block;color: gray;margin-top: 36px; margin-left:36px;">
+      <p id="foot-tilte">LIÊN HỆ</p>
+      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Truyền thông</a></p>
+      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Thông cáo báo chí</a></p>
+      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Tin tức sự kiện</a></p>
+      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Thư viện</a></p>
+    </div>
+  </div>
+
+  <div class="w3-quarter w3-center">
+    <div style="display: inline-block;color: gray; margin-top: 36px;  margin-left:36px;">
+      <p id="foot-tilte" style=" margin-bottom: 31px;">CÔNG TY TNHH VIETNAM'S RICE</p>
       <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Mã số thuế:01354968720</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Ngày thành lập: 15/3/2024</a></p>
+      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Ngày thành lập: 15/03/2024</a></p>
       <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Lĩnh vực: Nông nghiệp, lương thực phẩm,<br>
           xuất nhập khẩu lương thực, phát triển nông thôn</a></p>
     </div>
-
   </div>
+</div>
 
 
 </body>

@@ -2,3 +2,82 @@
     display: none;
 } */
 
+
+p{
+    font-size: 24px;
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight:bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button{
+    font-size: 30px;
+    
+}
+
+#price {
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+*{
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+label{
+    font-size: 24px;
+}
+
+#a1{
+    padding: 30px;
+}
+
+a{
+    font-weight: bold;
+    
+}
+
+li{
+    font-size: 24px;
+}
+
+#navheader, #footer{
+    background-color: #F5F5F5;
+}
+
+.diamond-frame {
+      width: 100px;
+      /* Độ rộng của khung */
+      height: 100px;
+      /* Chiều cao của khung */
+      overflow: hidden;
+      /* Ẩn phần ảnh vượt ra khỏi khung */
+      transform: rotate(45deg);
+      /* Xoay khung 45 độ */
+      position: relative;
+      border: 2px solid rgb(13, 91, 209);
+      margin: auto;
+    }
+
+    .diamond-frame img {
+      width: 100%;
+      /* Đảm bảo ảnh lấp đầy khung */
+      height: auto;
+      transform: rotate(-45deg);
+      /* Đảo ngược lại ảnh để hiển thị chính xác */
+      position: absolute;
+
+    }
+
+#navheader{
+    font-size: 20px;
+}
+
+#foot-tilte{
+    color: black;
+    font-weight: bold;
+}

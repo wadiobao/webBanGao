@@ -72,3 +72,16 @@ function change(inputID) {
 }
 // Initially run the change function to apply any initial filters
 change();
+
+
+function searchDisplay(idsearch){
+  document.getElementById("searchbar").style.display="block";
+  document.getElementById(idsearch).style.display="none";
+  document.getElementById("close-btn").style.display="block";
+}
+
+function searchClose(idsearch){
+  document.getElementById("searchbar").style.display="none";
+  document.getElementById(idsearch).style.display="none";
+  document.getElementById("search-btn").style.display="block";
+}

@@ -21,20 +21,26 @@
 <body>
 
   <!-- Navbar -->
-  <div class="w3-top" id="nav">
-    <div class="w3-bar w3-light-grey" style="height: 60px;">
+  <div class="w3-top" id="navheader">
+    <div class="w3-bar " style="height: 60px;">
       <div class="w3-bar-item " style="margin: 0; width: 200px;">
-        <a href=""><img src="./src/img/logo1.png" alt="logo" style="width: 100%;margin-left: 24px;" /></a>
+        <a href="./index.html"><img src="./src/img/logo1.png" alt="logo" style="width: 100%;margin-left: 24px;" /></a>
       </div>
       <div class="w3-right">
-        <input type="text" class="w3-bar-item w3-input w3-round-xxlarge " placeholder="Search.." style="margin:10px 0">
-        <button class="fa fa-search w3-button" style="margin:10px 0"></button>
+        <input type="text" class="w3-bar-item w3-input w3-round-xxlarge " placeholder="Search.."
+          style="margin:10px 0; display: none;" id="searchbar">
+        <button id="close-btn" class="fa fa-close"
+          style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;display: none;"
+          onclick="searchClose('close-btn')"></button>
+        <button id="search-btn" class="fa fa-search"
+          style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
+          onclick="searchDisplay('search-btn')"></button>
       </div>
-      <a href="./bin/contract.html" class="w3-bar-item w3-button w3-right" style="margin:10px 0">LIÊN HỆ </a>
+      <a href="./bin/contract.html" class="w3-bar-item  w3-right" style="margin:10px 20px">LIÊN HỆ </a>
       <div class="w3-bar-item"></div>
-      <a href="./bin/gioithieu.html" class="w3-bar-item w3-button w3-right" style="margin:10px 0">GIỚI THIỆU</a>
-      <a href="./bin/buy.html" class="w3-bar-item w3-button " style="margin:10px 0;font-weight: bold;">SHOP NOW!</a>
-      <a href="" class="w3-bar-item w3-button w3-right" style="margin:10px 0">TRANG CHỦ</a>
+      <a href="./bin/gioithieu.html" class="w3-bar-item  w3-right" style="margin:10px 20px">GIỚI THIỆU</a>
+      <a href="./bin/buy.html" class="w3-bar-item  " style="margin:10px 20px;font-weight: bold;">SHOP NOW!</a>
+      <a href="" class="w3-bar-item  w3-right" style="margin:10px 20px;">TRANG CHỦ</a>
 
     </div>
   </div>
@@ -64,7 +70,8 @@
           chuyên nghiệp, chúng tôi cam kết mang lại những sản phẩm chất lượng nhất từ vùng đất màu mỡ và nước trong lành
           của Việt Nam.
         </p>
-        <a href="./bin/gioithieu.html"><button class="w3-button w3-round w3-green " style="font-size: 28px;" >Tìm hiểu thêm </button></a>
+        <a href="./bin/gioithieu.html"><button class="w3-button w3-round w3-green " style="font-size: 28px;">Tìm hiểu
+            thêm </button></a>
       </div>
       <div class="w3-half ">
         <img src="./src/img/Gemini_Generated_Image.jpg" alt="" class="w3-image" style="width: 100%;">
@@ -139,28 +146,45 @@
     </div>
   </div>
 
-  <div class="w3-container w3-light-grey" style="height: 400px;margin-top: 64px;" id="footer">
-    <div style="margin: 24px 36px; color: gray; display:inline-block;">
-      <a href=""><img src="./src/img/logo1.png" alt="logo" style=""></a>
-      <p>Số điện thoại:099999999</p>
-      <p>Email: contractVNR@gmail.com</p>
-      <p>Địa chỉ: Trâu Quỳ, Gia Lâm, Hà Nội, Việt nam</p>
-    </div>
-    <div style="display: inline-block; margin-left: 20px;color: gray;">
-      <p style="font-size: 20px;color: black;">SẢN PHẨM</p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Việt</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Thái</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Mỹ</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Ấn Độ</a></p>
-    </div>
-    <div style="display: inline-block; margin-left: 120px;color: gray;">
-      <p style="font-size: 20px;color: black; margin-bottom: 31px;">CÔNG TY TNHH VIETNAM'S RICE</p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Mã số thuế:01354968720</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Ngày thành lập: 15/3/2024</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Lĩnh vực: Nông nghiệp, lương thực phẩm,<br>
-          xuất nhập khẩu lương thực, phát triển nông thôn</a></p>
+  <!-- footer -->
+  <div class="w3-container w3-row-padding" style="margin-top: 64px;" id="footer">
+    <div class="w3-quarter w3-center">
+      <div style="margin: 24px 36px; color: gray; display:inline-block;">
+        <a href=""><img src="./src/img/logo1.png" alt="logo" style=""></a>
+        <p>Số điện thoại:0999.999.9999</p>
+        <p>Email: contractVNR@gmail.com</p>
+        <p>Địa chỉ: Trâu Quỳ, Gia Lâm, Hà Nội, Việt nam</p>
+      </div>
     </div>
 
+    <div class="w3-quarter w3-center">
+      <div style="display: inline-block;color: gray;margin-top: 36px; margin-left:36px;">
+        <p id="foot-tilte" >SẢN PHẨM</p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Việt</a></p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Thái</a></p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Mỹ</a></p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Ấn Độ</a></p>
+      </div>
+    </div>
+    <div class="w3-quarter w3-center">
+      <div style="display: inline-block;color: gray;margin-top: 36px; margin-left:36px;">
+        <p id="foot-tilte">LIÊN HỆ</p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Truyền thông</a></p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Thông cáo báo chí</a></p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Tin tức sự kiện</a></p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Thư viện</a></p>
+      </div>
+    </div>
+
+    <div class="w3-quarter w3-center">
+      <div style="display: inline-block;color: gray; margin-top: 36px;  margin-left:36px;">
+        <p id="foot-tilte" style=" margin-bottom: 31px;">CÔNG TY TNHH VIETNAM'S RICE</p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Mã số thuế:01354968720</a></p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Ngày thành lập: 15/03/2024</a></p>
+        <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Lĩnh vực: Nông nghiệp, lương thực phẩm,<br>
+            xuất nhập khẩu lương thực, phát triển nông thôn</a></p>
+      </div>
+    </div>
   </div>
 
 
