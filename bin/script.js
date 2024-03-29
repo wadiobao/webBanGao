@@ -85,3 +85,51 @@ function searchClose(idsearch){
   document.getElementById(idsearch).style.display="none";
   document.getElementById("search-btn").style.display="block";
 }
+
+function increaseQuantity() {
+  let quantityInput = document.querySelector('input[name="quantity"]');
+  let quantity = parseInt(quantityInput.value);
+  quantityInput.value = quantity + 1;
+}
+
+function decreaseQuantity() {
+  let quantityInput = document.querySelector('input[name="quantity"]');
+  let quantity = parseInt(quantityInput.value);
+  if (quantity > 1) {
+    quantityInput.value = quantity - 1;
+  }
+}
+
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(cityName).style.display = "block";
+
+}
+  function changeImage(linkimg)
+  {
+      
+  var img = document.getElementById("img1");
+  img.src=""+linkimg+"";
+  return false;
+  }
+
+  function drops() {
+    var x = document.getElementById("Demo");
+    if (x.className.indexOf("w3-show") == -1) { 
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+
+  function openRightMenu() {
+    document.getElementById("rightMenu").style.display = "block";
+  }
+  
+  function closeRightMenu() {
+    document.getElementById("rightMenu").style.display = "none";
+  }

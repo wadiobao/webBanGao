@@ -26,6 +26,27 @@
       <div class="w3-bar-item " style="margin: 0; width: 200px;">
         <a href="./index.html"><img src="./src/img/logo1.png" alt="logo" style="width: 100%;margin-left: 24px;" /></a>
       </div>
+      <div class="w3-dropdown-click w3-right" style="background-color: transparent;" id="dropmenu">
+        <button class=" fa fa-bars" style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
+          onclick="drops()" id="dropdn"></button>
+        <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0" id="Demo">
+          <a href="./bin/buy.html" class="w3-bar-item w3-button">MUA NGAY</a>
+          <a href="./index.html" class="w3-bar-item w3-button">TRANG CHỦ</a>
+          <a href="./bin/gioithieu.html" class="w3-bar-item w3-button">GIỚI THIỆU</a>
+          <a href="./bin/contract.html" class="w3-bar-item w3-button">LIÊN HỆ</a>
+        </div>
+      </div>
+      <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;width: 20%;"
+        id="rightMenu">
+        <button onclick="closeRightMenu()" class="w3-bar-item  w3-large;" style="cursor: pointer;">
+          <p style="display: inline-block;">GIỎ HÀNG</p>
+          <p class="w3-right" style="display: inline-block;font-weight: bold;"> &times;</p>
+        </button>
+        <h3 style="margin-left: 10%;">Giỏ hàng của bạn còn trống. </h3>
+      </div>
+      <button class="w3-bar-item  w3-right fa fa-shopping-cart"
+        style="margin:10px 20px;cursor: pointer;background-color: transparent" onclick="openRightMenu()"></button>
+
       <div class="w3-right">
         <input type="text" class="w3-bar-item w3-input w3-round-xxlarge " placeholder="Search.."
           style="margin:10px 0; display: none;" id="searchbar">
@@ -44,6 +65,8 @@
 
     </div>
   </div>
+
+
 
 
   <div class=" w3-display-container " style="margin-top: 40px;">
@@ -159,7 +182,7 @@
 
     <div class="w3-quarter w3-center">
       <div style="display: inline-block;color: gray;margin-top: 36px; margin-left:36px;">
-        <p id="foot-tilte" >SẢN PHẨM</p>
+        <p id="foot-tilte">SẢN PHẨM</p>
         <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Việt</a></p>
         <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Thái</a></p>
         <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Mỹ</a></p>
